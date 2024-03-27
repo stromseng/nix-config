@@ -34,6 +34,8 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    # Set union syntax
+    lib = nixpkgs.lib // home-manager.lib;
     # Supported systems for your flake packages, shell, etc.
     systems = [
       "aarch64-linux"
@@ -45,7 +47,12 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
   in {
+    inherit lib;
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -68,7 +75,8 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # replace with your hostname
-      thinkpad = nixpkgs.lib.nixosSystem {
+      # Thinkpad P1, laptop
+      thinkpad = lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
@@ -81,8 +89,8 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # Replace with your username@hostname
-      "magnus@thinkpad" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      "magnus@thinkpad" = lib.homeManagerConfiguration {
+        pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
