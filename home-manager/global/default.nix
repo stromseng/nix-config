@@ -1,13 +1,4 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, pkgs, config, outputs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -47,17 +38,21 @@
     };
   };
 
-  # Set your username
   home = {
-    username = "magnus";
-    homeDirectory = "/home/magnus";
+    # Set your username
+    username = lib.mkDefault "magnus";
+    homeDirectory = lib.mkDefault "/home/magnus";
+
+    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+    stateVersion = lib.mkDefault "24.05";
+
+    # Add stuff for your user as you see fit:
+    # programs.neovim.enable = true;
+    # home.packages = with pkgs; [ steam ];
+    packages = [ inputs.nil.packages.${pkgs.system}.default ];
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
 
-  home.packages = [ inputs.nil.packages.${pkgs.system}.default ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
@@ -65,7 +60,4 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
 }

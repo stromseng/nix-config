@@ -21,9 +21,11 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    #Import common global and optional configs
     ../common/global
     ../common/optional/gnome.nix
     ../common/optional/pipewire.nix
+    ../common/optional/zsh.nix
   ];
 
 
@@ -129,6 +131,7 @@
     vscode
     firefox
     nixpkgs-fmt
+    gnome.gnome-boxes
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
