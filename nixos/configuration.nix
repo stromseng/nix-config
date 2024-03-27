@@ -83,10 +83,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-    # Set your time zone.
+  # Set your time zone.
   time.timeZone = "Europe/Oslo";
 
-    # Select internationalisation properties.
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -101,7 +101,7 @@
     LC_TIME = "nb_NO.UTF-8";
   };
 
-    # Enable the X11 windowing system.
+  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
@@ -117,10 +117,10 @@
   # Configure console keymap
   console.keyMap = "no";
 
-    # Enable CUPS to print documents.
+  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-    # Enable sound with pipewire.
+  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -137,7 +137,7 @@
     #media-session.enable = true;
   };
 
-    # Enable touchpad support (enabled default in most desktopManager).
+  # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
@@ -152,18 +152,18 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+        firefox
+        #  thunderbird
+      ];
     };
   };
 
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  wget
-git
-curl
-vscode
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    curl
+    vscode
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
