@@ -74,7 +74,7 @@
   # Add the rest of your current configuration
 
   # Set your hostname
-  networking.hostName = "thinkpad-p1";
+  networking.hostName = "thinkpad";
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;

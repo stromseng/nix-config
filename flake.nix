@@ -68,7 +68,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # replace with your hostname
-      thinkpad-p1 = nixpkgs.lib.nixosSystem {
+      thinkpad = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
@@ -81,7 +81,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # Replace with your username@hostname
-      "magnus@thinkpad-p1" = home-manager.lib.homeManagerConfiguration {
+      "magnus@thinkpad" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
