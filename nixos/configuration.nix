@@ -165,6 +165,7 @@
     curl
     vscode
     firefox
+    home-manager
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
