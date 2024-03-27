@@ -57,6 +57,8 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+  home.packages = [ inputs.nil.packages.${pkgs.system}.default ];
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;

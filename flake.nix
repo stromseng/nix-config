@@ -19,12 +19,18 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    # LSP Nil
+    nil.url = "github:oxalica/nil";
+    # Disclaimer: The flake.lock we ship is tested in CI. If you use follows to override flake inputs, we do not guarantee that it will build.
+    # nil.inputs.nixpkgs.follows = "nixpkgs"; 
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nil,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -46,6 +52,8 @@
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
