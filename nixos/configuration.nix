@@ -22,17 +22,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    # Import home-manager's NixOS module
-    inputs.home-manager.nixosModules.home-manager
   ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      magnus = import ../home-manager/home.nix;
-    };
-  };
 
   nixpkgs = {
     # You can add overlays here
@@ -162,7 +152,7 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
-        firefox
+        #firefox
         #  thunderbird
       ];
     };
@@ -174,6 +164,7 @@
     git
     curl
     vscode
+    firefox
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
