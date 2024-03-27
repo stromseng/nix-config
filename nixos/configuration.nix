@@ -71,7 +71,7 @@
     auto-optimise-store = true;
   };
 
-  # FIXME: Add the rest of your current configuration
+  # Add the rest of your current configuration
 
   # Set your hostname
   networking.hostName = "thinkpad-p1";
