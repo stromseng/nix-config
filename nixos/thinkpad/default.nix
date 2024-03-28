@@ -5,7 +5,6 @@
 , lib
 , config
 , pkgs
-, nix-flatpak
 , ...
 }: {
   # You can import other NixOS modules here
@@ -16,6 +15,7 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    inputs.nix-flatpak.nixosModules.nix-flatpak
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -28,7 +28,6 @@
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
-    nix-flatpak.nixosModules.nix-flatpak
   ];
 
 
