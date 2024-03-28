@@ -5,6 +5,7 @@
 , lib
 , config
 , pkgs
+, nix-flatpak
 , ...
 }: {
   # You can import other NixOS modules here
@@ -27,6 +28,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
+    nix-flatpak.nixosModules.nix-flatpak
   ];
 
 

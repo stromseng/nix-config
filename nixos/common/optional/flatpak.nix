@@ -1,7 +1,4 @@
 {
-  imports = [
-    "nixosModules.nix-flatpak"
-  ];
   services = {
     flatpak = {
       enable = true;
