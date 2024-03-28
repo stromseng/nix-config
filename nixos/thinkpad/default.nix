@@ -26,6 +26,7 @@
     ../common/optional/gnome.nix
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
+    ../common/optional/flatpak.nix
   ];
 
 
@@ -132,6 +133,7 @@
     firefox
     nixpkgs-fmt
     gnome.gnome-boxes
+    zsh-powerlevel10k
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

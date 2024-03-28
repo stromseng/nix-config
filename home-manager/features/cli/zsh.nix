@@ -4,13 +4,19 @@
       enable = true;
       enableCompletion = true;
       autocd = true;
-      autosuggestions.enable = true;
       defaultKeymap = "emacs";
-      ohMyZsh = {
+      shellAliases = { };
+      initExtra = ''
+        rebuild () {
+          sudo nixos-rebuild switch --flake .#thinkpad
+        }
+      '';
+      oh-my-zsh = {
         enable = true;
-
+        plugins = [
+          "git"
+        ];
       };
     };
   };
-  users.defaultUserShell = pkgs.zsh;
 }
