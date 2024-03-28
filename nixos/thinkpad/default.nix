@@ -120,7 +120,7 @@
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
         #firefox
-        #  thunderbird
+        #thunderbird
       ];
     };
   };
@@ -135,6 +135,9 @@
     nixpkgs-fmt
     gnome.gnome-boxes
     zsh-powerlevel10k
+    jetbrains-toolbox
+    openjdk # For PlantUML
+    graphviz # For PlantUML
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
