@@ -28,6 +28,8 @@
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
+
+    ../common/optional/hyprland.nix
   ];
 
 
