@@ -50,9 +50,11 @@
     # programs.neovim.enable = true;
     # home.packages = with pkgs; [ steam ];
     packages = [ inputs.nil.packages.${pkgs.system}.default ];
+
+    activation.createRepoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      mkdir -p ~/repos/
+    '';
   };
-
-
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
@@ -60,4 +62,5 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
 }
