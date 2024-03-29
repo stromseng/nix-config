@@ -9,6 +9,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.dash-to-panel
+    gnome.gnome-tweaks
   ];
 }
