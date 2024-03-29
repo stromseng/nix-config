@@ -33,11 +33,6 @@ in
       # Source a file (multi-file configs)
       # source = ~/.config/hypr/myColors.conf
 
-      # Set programs that you use
-      "$terminal " = "kitty";
-      "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
-
       # Some default env vars.
       env = [
         "XCURSOR_SIZE,24"
@@ -67,8 +62,8 @@ in
         gaps_in = 5;
         gaps_out = 20;
         border_size = 2;
-        col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        col.inactive_border = "rgba(595959aa)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";
 
@@ -92,7 +87,7 @@ in
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        col.shadow = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(1a1a1aee)";
       };
 
       animations = {
@@ -112,99 +107,110 @@ in
         ];
       };
 
-      # dwindle = 
-      # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-      pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-      preserve_split = true; # you probably want this
-    };
-
-    master = {
-      # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-      new_is_master = true;
-    };
-
-    gestures = {
-      # See https://wiki.hyprland.org/Configuring/Variables/ for more
-      workspace_swipe = false;
-    };
-
-    misc = {
-      # See https://wiki.hyprland.org/Configuring/Variables/ for more
-      force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
-    };
-
-    # Example per-device config
-    # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-    device =
-      {
-        name = "epic-mouse-v1";
-        sensitivity = -0.5;
+      dwindle = {
+        # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+        pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        preserve_split = true; # you probably want this
       };
 
-    # Example windowrule v1
-    # windowrule = float, ^(kitty)$
-    # Example windowrule v2
-    # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-    # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-    windowrulev2 = "suppressevent maximize, class:.* "; # You'll probably like this.
+      master = {
+        # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+        new_is_master = true;
+      };
+
+      gestures = {
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more
+        workspace_swipe = false;
+      };
+
+      misc = {
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more
+        force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
+      };
+
+      # Example per-device config
+      # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+      device =
+        {
+          name = "epic-mouse-v1";
+          sensitivity = -0.5;
+        };
+
+      # Example windowrule v1
+      # windowrule = float, ^(kitty)$
+      # Example windowrule v2
+      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+      windowrulev2 = "suppressevent maximize, class:.* "; # You'll probably like this.
 
 
-    # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-    "$mainMod" = "SUPER";
+      "$mainMod" = "SUPER";
 
-    # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-    bind = [
-      "$mainMod, Q, exec, $terminal"
-      "$mainMod, C, killactive,"
-      "$mainMod, M, exit,"
-      "$mainMod, E, exec, $fileManager"
-      "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec, $menu"
-      "$mainMod, P, pseudo," # dwindle
-      "$mainMod, J, togglesplit," # dwindle
+      # Set programs that you use
+      "$terminal " = "kitty";
+      "$fileManager" = "dolphin";
+      "$menu" = "wofi --show drun";
 
-      # Move focus with mainMod + arrow keys
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+      bind = [
 
-      # Switch workspaces with mainMod + [0-9]
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
-      "$mainMod, 5, workspace, 5"
-      "$mainMod, 6, workspace, 6"
-      "$mainMod, 7, workspace, 7"
-      "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
-      "$mainMod, 0, workspace, 10"
+        # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, movetoworkspace, 1"
-      "$mainMod SHIFT, 2, movetoworkspace, 2"
-      "$mainMod SHIFT, 3, movetoworkspace, 3"
-      "$mainMod SHIFT, 4, movetoworkspace, 4"
-      "$mainMod SHIFT, 5, movetoworkspace, 5"
-      "$mainMod SHIFT, 6, movetoworkspace, 6"
-      "$mainMod SHIFT, 7, movetoworkspace, 7"
-      "$mainMod SHIFT, 8, movetoworkspace, 8"
-      "$mainMod SHIFT, 9, movetoworkspace, 9"
-      "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-      # Example special workspace (scratchpad)
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, Q, exec, $terminal"
+        "$mainMod, C, killactive,"
+        "$mainMod, M, exit,"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, V, togglefloating,"
+        "$mainMod, R, exec, $menu"
+        "$mainMod, P, pseudo," # dwindle
+        "$mainMod, J, togglesplit," # dwindle
 
-      # Scroll through existing workspaces with mainMod + scroll
-      "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, workspace, e-1"
+        # Move focus with mainMod + arrow keys
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
 
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-    ];
+        # Switch workspaces with mainMod + [0-9]
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
+
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
+
+        # Example special workspace (scratchpad)
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
+
+        # Move/resize windows with mainMod + LMB/RMB and dragging
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+    };
+
+
 
   };
 }
