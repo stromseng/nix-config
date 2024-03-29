@@ -134,7 +134,6 @@
     firefox
     nixpkgs-fmt
     gnome.gnome-boxes
-    zsh-powerlevel10k
     jetbrains-toolbox
     openjdk # For PlantUML
     graphviz # For PlantUML

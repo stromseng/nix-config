@@ -2,14 +2,18 @@
   programs = {
     zsh = {
       enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      ohMyZsh = {
-        enable = true;
-
-      };
-      promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     };
   };
   users.defaultUserShell = pkgs.zsh;
+  environment.systemPackages = with pkgs; [
+    zsh
+  ];
+
+  # Install meslogs nf font
+  fonts.packages = with pkgs; [
+    meslo-lgs-nf
+  ];
+
+  # For autocompletion of system packages
+  environment.pathsToLink = [ "/share/zsh" ];
 }
