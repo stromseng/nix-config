@@ -60,8 +60,7 @@ https://github.com/stromseng/nix-config.git
 ## Usage
 
 -   Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
-    configuration.
-    -   If you're still on a live installation medium, run `nixos-install --flake
+    configuration. - If you're still on a live installation medium, run `nixos-install --flake
 .#hostname` instead, and reboot.
 -   Run `home-manager switch --flake .#username@hostname` to apply your home
     configuration.
@@ -171,3 +170,5 @@ on your repo.
 # Inspiration
 
 Gnome Config https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
+
+`dconf watch` is very nice
