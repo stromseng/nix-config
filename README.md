@@ -2,20 +2,17 @@ Read https://github.com/Misterio77/nix-starter-configs?tab=readme-ov-file
 
 ### TODO
 
-- Move packages to home manager
-- Use zsh with p10k
+-   Move packages to home manager
+-   Use zsh with p10k
 
 # Usage
 
 -   Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
-    configuration.
-    -   If you're still on a live installation medium, run `nixos-install --flake
+    configuration. - If you're still on a live installation medium, run `nixos-install --flake
 .#hostname` instead, and reboot.
 -   Run `home-manager switch --flake .#username@hostname` to apply your home
     configuration.
     -   If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
-
-
 
 # Getting started
 
@@ -37,33 +34,38 @@ the other awesome learning resources).
 
 ## The repo
 
-- [Install git](https://nixos.wiki/wiki/git), if you haven't already.
-- Create a repository for your config, for example:
+-   [Install git](https://nixos.wiki/wiki/git), if you haven't already.
+-   Create a repository for your config, for example:
+
 ```bash
 cd ~/
 git init nix-config
 cd nix-config
 ```
-- Make sure you're running Nix 2.4+, and opt into the experimental `flakes` and `nix-command` features:
+
+-   Make sure you're running Nix 2.4+, and opt into the experimental `flakes` and `nix-command` features:
+
 ```bash
 # Should be 2.4+
 nix --version
 export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
-- Pull the repo
+
+-   Pull the repo
+
 ```
 https://github.com/stromseng/nix-config.git
 ```
 
 ## Usage
 
-- Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
-  configuration.
-    - If you're still on a live installation medium, run `nixos-install --flake
-      .#hostname` instead, and reboot.
-- Run `home-manager switch --flake .#username@hostname` to apply your home
-  configuration.
-  - If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
+-   Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
+    configuration.
+    -   If you're still on a live installation medium, run `nixos-install --flake
+.#hostname` instead, and reboot.
+-   Run `home-manager switch --flake .#username@hostname` to apply your home
+    configuration.
+    -   If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
 
 And that's it, really! You're ready to have fun with your configurations using
 the latest and greatest nix3 flake-enabled command UX.
@@ -73,19 +75,20 @@ the latest and greatest nix3 flake-enabled command UX.
 You can organize them by hostname and username on `hosts` and `home-manager`
 directories, be sure to also add them to `flake.nix`.
 
-You can take a look at this 
+You can take a look at this
 [configuration repo](https://github.com/misterio77/nix-config) for ideas.
 
 ## User password and secrets
 
 You have basically two ways of setting up default passwords:
-- By default, you'll be prompted for a root password when installing with
-  `nixos-install`. After you reboot, be sure to add a password to your own
-  account and lock root using `sudo passwd -l root`.
-- Alternatively, you can specify `initialPassword` for your user. This will
-  give your account a default password, be sure to change it after rebooting!
-  If you do, you should pass `--no-root-passwd` to `nixos-install`, to skip
-  setting a password on the root account.
+
+-   By default, you'll be prompted for a root password when installing with
+    `nixos-install`. After you reboot, be sure to add a password to your own
+    account and lock root using `sudo passwd -l root`.
+-   Alternatively, you can specify `initialPassword` for your user. This will
+    give your account a default password, be sure to change it after rebooting!
+    If you do, you should pass `--no-root-passwd` to `nixos-install`, to skip
+    setting a password on the root account.
 
 If you don't want to set your password imperatively, you can also use
 `passwordFile` for safely and declaratively setting a password from a file
@@ -164,3 +167,7 @@ Nix flakes only see files that git is currently tracked, so just `git add .`
 and you should be good to go. Files on `.gitignore`, of course, are invisible
 to nix - this is to guarantee your build won't depend on anything that is not
 on your repo.
+
+# Inspiration
+
+Gnome Config https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/

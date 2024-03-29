@@ -10,5 +10,6 @@
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
+    gnome-extension-manager
   ];
 }

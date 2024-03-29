@@ -25,6 +25,11 @@
         rebuild-hm () {
           home-manager switch --flake ~/nix-config
         }
+
+        rebuild () {
+          rebuild-nixos
+          rebuild-hm
+        }
         
         # Powerlevel10k configuration
         source ~/.p10k.zsh

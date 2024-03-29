@@ -15,7 +15,6 @@
 
       # `gnome-extensions list` for a list
       enabled-extensions = [
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
         "trayIconsReloaded@selfmade.pl"
         "Vitals@CoreCoding.com"
         "dash-to-panel@jderose9.github.com"
@@ -27,7 +26,6 @@
   };
   home.packages = with pkgs; [
     # ...
-    gnomeExtensions.user-themes
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-panel
