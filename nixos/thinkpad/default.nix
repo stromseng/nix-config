@@ -29,7 +29,7 @@
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
 
-    ../common/optional/hyprland.nix
+    # ../common/optional/hyprland.nix
   ];
 
 
