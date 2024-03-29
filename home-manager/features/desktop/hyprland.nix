@@ -10,7 +10,11 @@ in
     enable = true;
 
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once = [
+        ''${startupScript}/bin/start''
+        ''${pkgs.polkit-kde-agent-1}/bin/polkit-agent-helper-1''
+      ];
+
 
       # This is an example Hyprland config file.
       #

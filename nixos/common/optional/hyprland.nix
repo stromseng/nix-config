@@ -8,6 +8,11 @@
     hyprpaper # Wallpaper daemon
     kitty # Terminal
     rofi-wayland # Application launcher
+    kdePackages.polkit-kde-agent-1 # Polkit agent, used for authentication dialogs
+    kdePackages.qtwayland # qt6 wayland
+    libsForQt5.qt5.qtwayland
+
+
   ];
 
   xdg.portal.enable = true;
