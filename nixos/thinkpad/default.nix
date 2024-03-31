@@ -139,6 +139,9 @@
     jetbrains-toolbox
     openjdk # For PlantUML
     graphviz # For PlantUML
+    zotero # Citation manager
+    wine # Windows application support
+    nixd # Nix LSP
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
