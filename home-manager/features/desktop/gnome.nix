@@ -17,6 +17,15 @@
       edge-tiling = true;
     };
     "org/gnome/desktop/wm/keybindings" = {
+      switch-windows = ["<Alt>Tab"];
+      switch-windows-backward = ["<Shift><Alt>Tab"];
+    };
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-applications =   ["<Super>Tab"];
+      switch-applications-backward =  ["<Shift><Super>Tab"];
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-right = [ "<Alt><Super>Right" ];
       switch-to-workspace-left = [ "<Alt><Super>Left" ];
       move-to-workspace-left = [ "<Control><Super>Left" ];
