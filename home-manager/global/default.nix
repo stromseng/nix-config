@@ -65,6 +65,7 @@
   };
 
   programs.gh.enable = true;
+  # run `gh auth login` to login on a new machine
 
 
 
