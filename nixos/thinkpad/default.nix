@@ -140,7 +140,6 @@
     openjdk # For PlantUML
     graphviz # For PlantUML
     zotero # Citation manager
-    wine # Windows application support
     nixd # Nix LSP
   ];
 
