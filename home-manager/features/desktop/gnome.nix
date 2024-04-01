@@ -7,9 +7,15 @@
   # Value: [firefox.desktop, ...]
 
   dconf.settings = {
-    # "/org/gnome/desktop/wm/preferences" = {
-    #   button-layout = "appmenu:minimize,maximize,close";
-    # };
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = false;
+    };
+    "org/gnome/mutter" = {
+      edge-tiling = true;
+    };
     "org/gnome/desktop/wm/keybindings" = {
       switch-to-workspace-right = [ "<Alt><Super>Right" ];
       switch-to-workspace-left = [ "<Alt><Super>Left" ];
