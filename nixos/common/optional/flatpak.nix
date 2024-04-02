@@ -15,6 +15,7 @@
         "com.spotify.Client"
         "com.mattjakeman.ExtensionManager"
         "com.usebottles.bottles"
+        "com.slack.Slack"
       ];
     };
   };

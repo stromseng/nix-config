@@ -141,6 +141,9 @@
     graphviz # For PlantUML
     zotero # Citation manager
     nixd # Nix LSP
+    nodejs_20
+    distrobox # Linux containers manager
+    boxbuddy # Distrobox gui
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
