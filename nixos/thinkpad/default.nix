@@ -144,6 +144,7 @@
     nodejs_20
     distrobox # Linux containers manager
     boxbuddy # Distrobox gui
+    python3
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
