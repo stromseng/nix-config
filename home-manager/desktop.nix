@@ -8,7 +8,6 @@
   imports = [
     ./global
     ./features/cli/zsh.nix
-    ./features/desktop/gnome.nix
   ];
 
   home = {
