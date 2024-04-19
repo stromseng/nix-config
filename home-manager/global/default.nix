@@ -43,9 +43,6 @@
     username = lib.mkDefault "magnus";
     homeDirectory = lib.mkDefault "/home/magnus";
 
-    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    stateVersion = lib.mkDefault "24.05";
-
     # Add stuff for your user as you see fit:
     # programs.neovim.enable = true;
     # home.packages = with pkgs; [ steam ];

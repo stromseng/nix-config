@@ -30,13 +30,14 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , nil
-    , nix-flatpak
-    , ...
-    } @ inputs:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nil,
+      nix-flatpak,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       # Set union syntax
@@ -52,10 +53,13 @@
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
       forAllSystems = nixpkgs.lib.genAttrs systems;
-      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      });
+      pkgsFor = lib.genAttrs systems (
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+      );
     in
     {
       inherit lib;
@@ -65,8 +69,6 @@
       # Formatter for your nix files, available through 'nix fmt'
       # Other options beside 'alejandra' include 'nixpkgs-fmt'
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
-
 
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
@@ -83,10 +85,21 @@
         # replace with your hostname
         # Thinkpad P1, laptop
         thinkpad = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = {
+            inherit inputs outputs;
+          };
           modules = [
             # > Our main nixos configuration file <
             ./nixos/thinkpad
+          ];
+        };
+        desktop = lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            # > Our main nixos configuration file <
+            ./nixos/desktop
           ];
         };
       };
@@ -97,10 +110,22 @@
         # Replace with your username@hostname
         "magnus@thinkpad" = lib.homeManagerConfiguration {
           pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/thinkpad.nix
+          ];
+        };
+        "magnus@desktop" = lib.homeManagerConfiguration {
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/desktop.nix
           ];
         };
       };

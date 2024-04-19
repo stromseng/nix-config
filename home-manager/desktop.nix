@@ -2,12 +2,11 @@
   imports = [
     ./global
     ./features/cli/zsh.nix
-    # ./features/desktop/hyprland.nix
     ./features/desktop/gnome.nix
   ];
 
-home = {
+  home = {
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    stateVersion = lib.mkDefault "24.05";
+    stateVersion = lib.mkDefault "23.11";
 }
 }
