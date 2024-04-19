@@ -22,7 +22,7 @@
     };
   };
 
-  # Nix helper
+  # Nix helper https://github.com/viperML/nh
   programs.nh = {
     enable = true;
     flake = "/home/magnus/nix-config";
