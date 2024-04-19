@@ -4,7 +4,7 @@
       enable = true;
 
       update.auto.enable = false;
-      uninstallUnamanged = true;
+      uninstallUnmanaged = true;
 
       packages = [
         {
