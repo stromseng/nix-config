@@ -89,6 +89,7 @@
             inherit inputs outputs;
           };
           modules = [
+            nix-flatpak.nixosModules.nix-flatpak
             # > Our main nixos configuration file <
             ./nixos/thinkpad
           ];
@@ -98,6 +99,7 @@
             inherit inputs outputs;
           };
           modules = [
+            nix-flatpak.nixosModules.nix-flatpak
             # > Our main nixos configuration file <
             ./nixos/desktop
           ];
