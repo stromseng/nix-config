@@ -30,6 +30,7 @@
     grub.device = "nodev";
     grub.useOSProber = true;
     grub.efiSupport = true;
+    grub.default = "saved";
   };
 
   networking.hostName = "desktop"; # Define your hostname.
@@ -167,7 +168,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
