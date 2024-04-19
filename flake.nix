@@ -89,9 +89,9 @@
             inherit inputs outputs;
           };
           modules = [
-            nix-flatpak.nixosModules.nix-flatpak
             # > Our main nixos configuration file <
             ./nixos/thinkpad
+            # Instead of adding modules like nix-flake here, add it in the default.nix file as an import
           ];
         };
         desktop = lib.nixosSystem {
@@ -99,9 +99,9 @@
             inherit inputs outputs;
           };
           modules = [
-            nix-flatpak.nixosModules.nix-flatpak
             # > Our main nixos configuration file <
             ./nixos/desktop
+            # Instead of adding modules like nix-flake here, add it in the default.nix file as an import
           ];
         };
       };

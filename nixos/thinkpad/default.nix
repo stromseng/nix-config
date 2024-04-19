@@ -132,22 +132,13 @@
 
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    curl
-    vscode
-    firefox
-    nixpkgs-fmt
     gnome.gnome-boxes
     jetbrains-toolbox
     openjdk # For PlantUML
     graphviz # For PlantUML
     zotero # Citation manager
-    nixd # Nix LSP
-    nodejs_20
     distrobox # Linux containers manager
     boxbuddy # Distrobox gui
-    python3
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -13,9 +13,18 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
+    # If you want to use modules your own flake exports (from modules/nixos):
+    # outputs.nixosModules.example
+
+    # Or modules from other flakes (such as nixos-hardware):
+    # inputs.hardware.nixosModules.common-cpu-amd
+    # inputs.hardware.nixosModules.common-ssd
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+
+    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     #Import common global and optional configs
+    ../common/global
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/zsh.nix
@@ -102,16 +111,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkgs.vscode
     gnome.gnome-software
-    git
-    wget
-    curl
     pkgs.gnome3.gnome-tweaks
-    pkgs.ddcutil
-    pkgs.ddcui
     gnome.adwaita-icon-theme
-    nixpkgs-fmt
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
@@ -165,8 +167,9 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
+    #https://nixos.wiki/wiki/Nvidia
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   # This value determines the NixOS release from which the default
