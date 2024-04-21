@@ -4,10 +4,13 @@
       enable = true;
 
       update.auto.enable = false;
-      uninstallUnmanagedPackages = true;
+      uninstallUnmanaged = true;
 
       packages = [
-        { appId = "com.discordapp.Discord"; origin = "flathub"; }
+        {
+          appId = "com.discordapp.Discord";
+          origin = "flathub";
+        }
         "io.github.brunofin.Cohesion"
         "com.sindresorhus.Caprine"
         "org.gimp.GIMP"

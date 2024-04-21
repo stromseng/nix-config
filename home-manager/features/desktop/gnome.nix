@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Do `dconf watch /` to see which keys to set when changing settings
 
   # Dconf key format
@@ -57,13 +58,13 @@
         {"0":[{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
       '';
 
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        intellihide-mode = "ALL_WINDOWS";
-        pressure-threshold =
-          0.0;
-        show-trash = false;
-        scroll-action = "cycle-windows";
-      };
+      # "org/gnome/shell/extensions/dash-to-dock" = {
+      #   intellihide-mode = "ALL_WINDOWS";
+      #   pressure-threshold =
+      #     0.0;
+      #   show-trash = false;
+      #   scroll-action = "cycle-windows";
+      # };
     };
   };
 
