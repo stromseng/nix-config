@@ -139,7 +139,13 @@
     zotero # Citation manager
     distrobox # Linux containers manager
     boxbuddy # Distrobox gui
+    python3
+    burpsuite
+    sqlmap
+    steam
   ];
+
+  programs.steam.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
