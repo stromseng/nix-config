@@ -39,4 +39,6 @@
     nodejs_20
     python3
   ];
+
+  programs.steam.enable = true;
 }
