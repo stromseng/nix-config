@@ -20,23 +20,16 @@
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
 
-    # LSP Nil
-    nil.url = "github:oxalica/nil";
-    # Disclaimer: The flake.lock we ship is tested in CI. If you use follows to override flake inputs, we do not guarantee that it will build.
-    nil.inputs.nixpkgs.follows = "nixpkgs";
-
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nil,
-      nix-flatpak,
-      ...
+    { self
+    , nixpkgs
+    , home-manager
+    , nix-flatpak
+    , ...
     }@inputs:
     let
       inherit (self) outputs;
