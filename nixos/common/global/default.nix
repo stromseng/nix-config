@@ -21,6 +21,9 @@
     };
   };
 
+  # Enable networking
+  networking.networkmanager.enable = true;
+
   # Nix helper https://github.com/viperML/nh
   programs.nh = {
     enable = true;

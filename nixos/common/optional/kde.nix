@@ -12,4 +12,7 @@
   #   platformTheme = "gnome";
   #   style = "adwaita-dark";
   # };
+
+  environment.systemPackages = with pkgs;
+    [ ];
 }
