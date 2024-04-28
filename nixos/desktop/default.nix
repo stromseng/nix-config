@@ -68,7 +68,6 @@
       "docker"
     ];
     packages = with pkgs; [
-      firefox
       #  thunderbird
     ];
   };
@@ -89,7 +88,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
   ];
 
   programs = {
@@ -122,7 +120,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -143,8 +141,10 @@
 
     #https://nixos.wiki/wiki/Nvidia
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    # Custom version is set to 535 below
     package = config.boot.kernelPackages.nvidiaPackages.production;
   };
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
