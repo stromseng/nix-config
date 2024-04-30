@@ -41,7 +41,24 @@
     nixd # Nix LSP
     nodejs_20
     python3
+    cargo # Rust package manager
+    rustc # Rust compiler
+    surrealdb # Database
   ];
 
   programs.steam.enable = true;
+
+  # Adding binary cache server
+  nix.settings = {
+
+    substituters = [
+      # nix community's cache server
+      "https://nix-community.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      # nix community's cache server public key
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 }
