@@ -43,7 +43,7 @@
     python3
     cargo # Rust package manager
     rustc # Rust compiler
-    surrealdb # Database
+    gcc # C compiler
   ];
 
   programs.steam.enable = true;
