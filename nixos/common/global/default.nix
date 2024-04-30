@@ -44,6 +44,7 @@
     cargo # Rust package manager
     rustc # Rust compiler
     gcc # C compiler
+    mise # dev env setup tool 
   ];
 
   programs.steam.enable = true;
