@@ -17,6 +17,7 @@
     # hardware.url = "github:nixos/nixos-hardware";
 
     surrealDB.url = "github:surrealdb/surrealdb";
+    surrealDB.inputs.nixpkgs.follows = "nixpkgs";
 
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
