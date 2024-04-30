@@ -88,7 +88,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-        surrealdb # Database
+        surrealist2 # SurrealDB interface
+        inputs.surrealDB.packages.${pkgs.stdenv.system}.default
   ];
 
   programs = {
