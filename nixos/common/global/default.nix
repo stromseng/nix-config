@@ -35,7 +35,7 @@
     wget
     git
     curl
-    vscode
+    vscode.fhs
     firefox
     nixpkgs-fmt # nix formatter
     nixd # Nix LSP
@@ -43,8 +43,10 @@
     python3
     cargo # Rust package manager
     rustc # Rust compiler
-    gcc # C compiler
+    rustfmt # Rust formatter
+    gcc # C compiler, needed for rust
     mise # dev env setup tool 
+    go # Go programming language
   ];
 
   programs.steam.enable = true;
