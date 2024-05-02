@@ -41,6 +41,8 @@
     nixd # Nix LSP
     nodejs_20
     python3
+    docker
+    docker-compose
     cargo # Rust package manager
     rustc # Rust compiler
     rustfmt # Rust formatter
@@ -64,4 +66,5 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
+  virtualisation.docker.enable = true;
 }
