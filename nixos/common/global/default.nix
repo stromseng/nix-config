@@ -1,9 +1,8 @@
 # This file (and the global directory) holds config that i use on all hosts
-{
-  inputs,
-  outputs,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, pkgs
+, ...
 }:
 {
   imports = [
@@ -22,6 +21,9 @@
     };
   };
 
+  # Enable networking
+  networking.networkmanager.enable = true;
+
   # Nix helper https://github.com/viperML/nh
   programs.nh = {
     enable = true;
@@ -29,10 +31,11 @@
   };
 
   environment.systemPackages = with pkgs; [
+    vim
     wget
     git
     curl
-    vscode
+    vscode.fhs
     firefox
     nixpkgs-fmt # nix formatter
     nixd # Nix LSP
@@ -40,6 +43,28 @@
     python3
     docker
     docker-compose
+    cargo # Rust package manager
+    rustc # Rust compiler
+    rustfmt # Rust formatter
+    gcc # C compiler, needed for rust
+    mise # dev env setup tool 
+    go # Go programming language
   ];
+
+  programs.steam.enable = true;
+
+  # Adding binary cache server
+  nix.settings = {
+
+    substituters = [
+      # nix community's cache server
+      "https://nix-community.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      # nix community's cache server public key
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
   virtualisation.docker.enable = true;
 }

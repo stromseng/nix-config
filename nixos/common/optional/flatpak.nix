@@ -19,6 +19,7 @@
         "com.mattjakeman.ExtensionManager"
         "com.usebottles.bottles"
         "com.slack.Slack"
+        "com.getpostman.Postman"
       ];
     };
   };

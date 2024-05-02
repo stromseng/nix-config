@@ -17,7 +17,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      outputs.overlays.stable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -46,7 +46,7 @@
     # Add stuff for your user as you see fit:
     # programs.neovim.enable = true;
     # home.packages = with pkgs; [ steam ];
-    packages = [ inputs.nil.packages.${pkgs.system}.default ];
+    packages = [ ];
 
     activation.createRepoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       mkdir -p ~/repos/
@@ -55,7 +55,7 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git = { 
+  programs.git = {
     enable = true;
     userName = "Magnus Alexander Strømseng";
     userEmail = "magnus.stromseng@gmail.com";
@@ -64,6 +64,12 @@
   programs.gh.enable = true;
   # run `gh auth login` to login on a new machine
 
+
+  programs.vscode = {
+    enable = true;
+  };
+  # needed for rust lang server and rust-analyzer extension
+  programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup zlib openssl.dev pkg-config ]);
 
 
 

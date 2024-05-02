@@ -2,13 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 
 {
@@ -45,32 +44,11 @@
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Oslo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nb_NO.UTF-8";
-    LC_IDENTIFICATION = "nb_NO.UTF-8";
-    LC_MEASUREMENT = "nb_NO.UTF-8";
-    LC_MONETARY = "nb_NO.UTF-8";
-    LC_NAME = "nb_NO.UTF-8";
-    LC_NUMERIC = "nb_NO.UTF-8";
-    LC_PAPER = "nb_NO.UTF-8";
-    LC_TELEPHONE = "nb_NO.UTF-8";
-    LC_TIME = "nb_NO.UTF-8";
-  };
-
   # Configure keymap in X11
   services.xserver = {
     xkb = {
       layout = "us";
-      variant = "intl";
+      variant = "altgr-intl";
     };
   };
 
@@ -90,7 +68,6 @@
       "docker"
     ];
     packages = with pkgs; [
-      firefox
       #  thunderbird
     ];
   };
@@ -111,8 +88,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+        surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
+        inputs.surrealDB.packages.${pkgs.stdenv.system}.default
   ];
 
   programs = {
@@ -145,7 +122,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -166,8 +143,10 @@
 
     #https://nixos.wiki/wiki/Nvidia
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    # Custom version is set to 535 below
     package = config.boot.kernelPackages.nvidiaPackages.production;
   };
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
