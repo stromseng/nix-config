@@ -38,5 +38,8 @@
     nixd # Nix LSP
     nodejs_20
     python3
+    docker
+    docker-compose
   ];
+  virtualisation.docker.enable = true;
 }
