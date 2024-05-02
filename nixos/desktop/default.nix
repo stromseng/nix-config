@@ -25,7 +25,7 @@
     #Import common global and optional configs
     ../common/global
     ../common/optional/pipewire.nix
-    ../common/optional/kde.nix
+    ../common/optional/gnome.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
   ];
