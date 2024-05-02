@@ -88,9 +88,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-        surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
-        inputs.surrealDB.packages.${pkgs.stdenv.system}.default
+    surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
+    inputs.surrealDB.packages.${pkgs.stdenv.system}.default
+    ddcutil
   ];
+
+  services.udev.packages = [ pkgs.ddcutil ]; # ddcutil needs to be in udev packages to work
+  hardware.i2c.enable = true; # Enable I2C for ddcutil
 
   programs = {
     # Enable nix.ld

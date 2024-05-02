@@ -69,7 +69,20 @@
     enable = true;
   };
   # needed for rust lang server and rust-analyzer extension
-  programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup zlib openssl.dev pkg-config ]);
+  programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [
+    rustup
+    zlib
+    openssl.dev
+    pkg-config
+    go # All go tools according to https://mgdm.net/weblog/vscode-nix-go-tools/
+    gotools
+    gopls
+    go-outline
+    gopkgs
+    gocode-gomod
+    godef
+    golint
+  ]);
 
 
 
