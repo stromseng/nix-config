@@ -40,7 +40,6 @@
     nixpkgs-fmt # nix formatter
     nixd # Nix LSP
     nodejs_20
-    python3
     docker
     docker-compose
     cargo # Rust package manager
@@ -49,6 +48,7 @@
     gcc # C compiler, needed for rust
     mise # dev env setup tool 
     go # Go programming language
+    python3 # Python 3
   ];
 
   programs.steam.enable = true;

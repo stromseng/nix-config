@@ -67,9 +67,6 @@
       "wheel"
       "docker"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 
   # PACKAGES
@@ -91,6 +88,7 @@
     surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
     inputs.surrealDB.packages.${pkgs.stdenv.system}.default
     ddcutil
+    ddcui
   ];
 
   services.udev.packages = [ pkgs.ddcutil ]; # ddcutil needs to be in udev packages to work
