@@ -42,13 +42,10 @@
     nodejs_20
     docker
     docker-compose
-    cargo # Rust package manager
-    rustc # Rust compiler
-    rustfmt # Rust formatter
-    gcc # C compiler, needed for rust
-    mise # dev env setup tool 
+    rustup
+    gcc # C compiler, needed for rust-analyzer
+    mise # dev env setup tool
     go # Go programming language
-    python3 # Python 3
   ];
 
   programs.steam.enable = true;
