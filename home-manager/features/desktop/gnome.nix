@@ -57,6 +57,7 @@
         "space-bar@luchrioh"
         "dash-to-dock@micxgx.gmail.com"
         "gSnap@micahosborne"
+        "noannoyance-fork@vrba.dev"
       ];
 
       "extensions/dash-to-panel/panel-element-positions" = ''
@@ -83,5 +84,6 @@
     gnomeExtensions.space-bar
     papirus-icon-theme
     gnomeExtensions.gsnap
+    gnomeExtensions.noannoyance-fork
   ];
 }
