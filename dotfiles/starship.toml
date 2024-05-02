@@ -8,6 +8,7 @@ add_newline = true
 disabled = false
 
 
+# Nerd Font symbols
 [aws]
 symbol = "  "
 
