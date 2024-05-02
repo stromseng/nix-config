@@ -46,6 +46,7 @@
     gcc # C compiler, needed for rust-analyzer
     mise # dev env setup tool
     go # Go programming language
+    nerdfonts # Nerd fonts
   ];
 
   programs.steam.enable = true;

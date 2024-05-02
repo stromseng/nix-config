@@ -1,6 +1,4 @@
-{ inputs
-, lib
-, pkgs
+{ lib
 , ...
 }:
 {
@@ -9,6 +7,7 @@
     ./features/cli/zsh.nix
     ./features/cli/nu.nix
     ./features/desktop/gnome.nix
+    ./features/cli/starship.nix
   ];
 
   home = {
