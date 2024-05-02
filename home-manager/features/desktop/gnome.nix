@@ -56,14 +56,24 @@
         # "dash-to-panel@jderose9.github.com"
         "space-bar@luchrioh"
         "dash-to-dock@micxgx.gmail.com"
+        "gSnap@micahosborne"
       ];
 
       "extensions/dash-to-panel/panel-element-positions" = ''
         {"0":[{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
       '';
-      "org/gnome/shell/extensions/dash-to-dock/click-action" = "focus-or-previews";
+      "extensions/gsnap/use-modifier" = true;
+
+
 
     };
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      click-action = "focus-or-previews";
+    };
+  };
+
+  home.file.".local/share/gnome-shell/extensions/gSnap@micahosborne/layouts.json" = {
+    source = ./gsnap.json;
   };
 
   home.packages = with pkgs; [
