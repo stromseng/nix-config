@@ -7,6 +7,7 @@
   imports = [
     ./global
     ./features/cli/zsh.nix
+    ./features/cli/nu.nix
     ./features/desktop/gnome.nix
   ];
 
