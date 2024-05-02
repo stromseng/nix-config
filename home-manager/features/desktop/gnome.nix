@@ -73,7 +73,7 @@
   };
 
   home.file.".local/share/gnome-shell/extensions/gSnap@micahosborne/layouts.json" = {
-    source = ./gsnap.json;
+    source = ../../../dotfiles/gsnap.json;
   };
 
   home.packages = with pkgs; [
