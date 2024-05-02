@@ -35,7 +35,7 @@
     wget
     git
     curl
-    vscode.fhs
+    vscode
     firefox
     nixpkgs-fmt # nix formatter
     nixd # Nix LSP

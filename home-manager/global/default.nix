@@ -64,28 +64,6 @@
   programs.gh.enable = true;
   # run `gh auth login` to login on a new machine
 
-
-  programs.vscode = {
-    enable = true;
-  };
-  # needed for rust lang server and rust-analyzer extension
-  programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [
-    rustup
-    zlib
-    openssl.dev
-    pkg-config
-    go # All go tools according to https://mgdm.net/weblog/vscode-nix-go-tools/
-    gotools
-    gopls
-    go-outline
-    gopkgs
-    gocode-gomod
-    godef
-    golint
-  ]);
-
-
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
