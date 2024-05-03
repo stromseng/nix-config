@@ -3,11 +3,7 @@
     flatpak = {
       enable = true;
 
-      update.onActivation = true;
-      # update.auto = {
-      #   enable = true;
-      #   onCalendar = "daily"; # Default value
-      # };
+      update.auto.enable = false;
       uninstallUnmanaged = true;
 
       packages = [
