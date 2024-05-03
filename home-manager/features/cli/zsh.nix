@@ -22,6 +22,8 @@
         # `znap source` starts plugins.
         znap source marlonrichert/zsh-autocomplete
         znap source zsh-users/zsh-autosuggestions
+        znap source zsh-users/zsh-syntax-highlighting
+        znap source zsh-users/zsh-completions        
       '';
     };
   };
