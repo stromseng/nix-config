@@ -7,6 +7,9 @@ add_newline = true
 [os]
 disabled = false
 
+[git_status]
+diverged = "󰃻"
+
 
 # Nerd Font symbols
 [aws]
