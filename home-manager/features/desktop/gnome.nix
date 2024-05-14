@@ -8,6 +8,10 @@
   # Value: [firefox.desktop, ...]
 
   dconf.settings = {
+    "org/gnome/shell" = {
+      disable-extension-version-validation = true;
+    };
+
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
     };
