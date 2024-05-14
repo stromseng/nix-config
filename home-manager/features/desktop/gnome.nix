@@ -74,6 +74,7 @@
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       click-action = "focus-or-previews";
+      intellihide-mode = "ALL_WINDOWS";
     };
   };
 
