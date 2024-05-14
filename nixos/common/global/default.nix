@@ -48,6 +48,7 @@
     go # Go programming language
     nerdfonts # Nerd fonts
     android-studio
+    figma-linux # Unofficial Figma client
   ];
 
   programs.steam.enable = true;
