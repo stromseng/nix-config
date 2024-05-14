@@ -85,8 +85,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
-    inputs.surrealDB.packages.${pkgs.stdenv.system}.default
+    #surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
+    #inputs.surrealDB.packages.${pkgs.stdenv.system}.default
   ];
 
 
