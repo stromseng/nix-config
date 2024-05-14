@@ -47,6 +47,7 @@
     mise # dev env setup tool
     go # Go programming language
     nerdfonts # Nerd fonts
+    jetbrains-toolbox
   ];
 
   programs.steam.enable = true;
