@@ -85,8 +85,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
-    inputs.surrealDB.packages.${pkgs.stdenv.system}.default
+    #surrealist2 # SurrealDB interface, custom package imported in flake.nix and defined in /pkgs
+    #inputs.surrealDB.packages.${pkgs.stdenv.system}.default
   ];
 
 
@@ -112,6 +112,8 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
+
+
   hardware.nvidia = {
 
     # Modesetting is required.
@@ -121,7 +123,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = true;
+    powerManagement.enable = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).

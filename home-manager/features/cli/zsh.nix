@@ -31,11 +31,6 @@
         source ~/repos/znap/znap.zsh  # Start Znap
       '';
       initExtra = ''
-        # Load starship prompt
-        znap eval starship 'starship init zsh --print-full-init'
-        znap prompt starship
-
-
         # `znap source` starts plugins.
         znap source marlonrichert/zsh-autocomplete
         znap source zsh-users/zsh-autosuggestions
@@ -43,6 +38,9 @@
         znap source zsh-users/zsh-completions
         znap source zsh-users/zsh-history-substring-search
         znap source MichaelAquilina/zsh-you-should-use
+
+        # Load starship prompt
+        eval "$(starship init zsh)"
       '';
     };
     # A modern ls replacement
