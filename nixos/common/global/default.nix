@@ -50,6 +50,12 @@
     libreoffice
     android-studio
     figma-linux # Unofficial Figma client
+    bc # winapps requirement
+    freerdp3 # winapps requirement
+    google-chrome
+    jetbrains.rust-rover
+    usbimager
+    zed-editor
   ];
 
   programs.steam.enable = true;

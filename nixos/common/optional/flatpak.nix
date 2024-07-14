@@ -24,6 +24,8 @@
         "com.usebottles.bottles"
         "com.slack.Slack"
         "com.getpostman.Postman"
+        "com.stremio.Stremio"
+        "com.github.finefindus.eyedropper"
       ];
     };
   };

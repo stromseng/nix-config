@@ -1,22 +1,23 @@
-Read https://github.com/Misterio77/nix-starter-configs?tab=readme-ov-file
+# NixOS Config
 
-### TODO
+## TODO
 
--   Move packages to home manager
--   Use zsh with p10k
+- Move packages to home manager
+- Use zsh with p10k
+- Read <https://github.com/Misterio77/nix-starter-configs?tab=readme-ov-file>
 
-# Usage
+## Usage
 
--   Using nix helper, type `nh os switch` or `nh home switch`
+- Using nix helper, type `nh os switch` or `nh home switch`
 
--   Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
+- Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
     configuration. - If you're still on a live installation medium, run `nixos-install --flake
 .#hostname` instead, and reboot.
--   Run `home-manager switch --flake .#username@hostname` to apply your home
+- Run `home-manager switch --flake .#username@hostname` to apply your home
     configuration.
-    -   If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
+  - If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
 
-# Getting started
+## Getting started
 
 Assuming you have a basic NixOS booted up (either live or installed, anything
 works). [Here's a link to the latest NixOS downloads, just for
@@ -36,8 +37,8 @@ the other awesome learning resources).
 
 ## The repo
 
--   [Install git](https://nixos.wiki/wiki/git), if you haven't already.
--   Create a repository for your config, for example:
+- [Install git](https://nixos.wiki/wiki/git), if you haven't already.
+- Create a repository for your config, for example:
 
 ```bash
 cd ~/
@@ -45,7 +46,7 @@ git init nix-config
 cd nix-config
 ```
 
--   Make sure you're running Nix 2.4+, and opt into the experimental `flakes` and `nix-command` features:
+- Make sure you're running Nix 2.4+, and opt into the experimental `flakes` and `nix-command` features:
 
 ```bash
 # Should be 2.4+
@@ -53,7 +54,7 @@ nix --version
 export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
 
--   Pull the repo
+- Pull the repo
 
 ```
 https://github.com/stromseng/nix-config.git
@@ -61,12 +62,12 @@ https://github.com/stromseng/nix-config.git
 
 ## Usage
 
--   Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
+- Run `sudo nixos-rebuild switch --flake .#hostname` to apply your system
     configuration. - If you're still on a live installation medium, run `nixos-install --flake
 .#hostname` instead, and reboot.
--   Run `home-manager switch --flake .#username@hostname` to apply your home
+- Run `home-manager switch --flake .#username@hostname` to apply your home
     configuration.
-    -   If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
+  - If you don't have home-manager installed, try `nix shell nixpkgs#home-manager`.
 
 And that's it, really! You're ready to have fun with your configurations using
 the latest and greatest nix3 flake-enabled command UX.
@@ -83,10 +84,10 @@ You can take a look at this
 
 You have basically two ways of setting up default passwords:
 
--   By default, you'll be prompted for a root password when installing with
+- By default, you'll be prompted for a root password when installing with
     `nixos-install`. After you reboot, be sure to add a password to your own
     account and lock root using `sudo passwd -l root`.
--   Alternatively, you can specify `initialPassword` for your user. This will
+- Alternatively, you can specify `initialPassword` for your user. This will
     give your account a default password, be sure to change it after rebooting!
     If you do, you should pass `--no-root-passwd` to `nixos-install`, to skip
     setting a password on the root account.
@@ -162,7 +163,7 @@ Please [let me know](https://github.com/Misterio77/nix-starter-config/issues)
 any questions or issues you face with these templates, so I can add more info
 here!
 
-## Nix says my repo files don't exist, even though they do!
+## Nix says my repo files don't exist, even though they do
 
 Nix flakes only see files that git is currently tracked, so just `git add .`
 and you should be good to go. Files on `.gitignore`, of course, are invisible
@@ -171,6 +172,6 @@ on your repo.
 
 # Inspiration
 
-Gnome Config https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
+Gnome Config <https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/>
 
 `dconf watch` is very nice
