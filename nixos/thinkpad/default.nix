@@ -22,7 +22,7 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     #Import common global and optional configs
     ../common/global
     ../common/optional/gnome.nix
