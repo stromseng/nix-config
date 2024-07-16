@@ -25,22 +25,24 @@
 
 let
 
-  esbuild-20-2 = let version = "0.20.2";
-  in esbuild.override {
-    buildGoModule = args:
-      buildGoModule (args // {
-        inherit version;
-        src = fetchFromGitHub {
-          owner = "evanw";
-          repo = "esbuild";
-          rev = "v${version}";
-          hash = "sha256-h/Vqwax4B4nehRP9TaYbdixAZdb1hx373dNxNHvDrtY=";
-        };
-        vendorHash = "sha256-+BfxCyg0KkDQpHt/wycy/8CTG6YBA/VJvJFhhzUnSiQ=";
-      });
-  };
+  esbuild-20-2 =
+    let version = "0.20.2";
+    in esbuild.override {
+      buildGoModule = args:
+        buildGoModule (args // {
+          inherit version;
+          src = fetchFromGitHub {
+            owner = "evanw";
+            repo = "esbuild";
+            rev = "v${version}";
+            hash = "sha256-h/Vqwax4B4nehRP9TaYbdixAZdb1hx373dNxNHvDrtY=";
+          };
+          vendorHash = "sha256-+BfxCyg0KkDQpHt/wycy/8CTG6YBA/VJvJFhhzUnSiQ=";
+        });
+    };
 
-in stdenv.mkDerivation (finalAttrs: {
+in
+stdenv.mkDerivation (finalAttrs: {
   pname = "surrealist";
   version = "2.0.3";
 
