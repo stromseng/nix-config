@@ -21,6 +21,9 @@
     };
   };
 
+  # Enable AppImages
+  programs.appimage.binfmt = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -31,6 +34,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    appimage-run
     vim
     wget
     git
