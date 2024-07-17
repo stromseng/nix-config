@@ -23,12 +23,15 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+
+    ./packages.nix
     #Import common global and optional configs
     ../common/global
     ../common/optional/gnome.nix
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
+    
 
     # ../common/optional/hyprland.nix
   ];
@@ -134,20 +137,6 @@
   };
 
   users.extraGroups.docker.members = [ "magnus" ];
-
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    gnome.gnome-boxes
-    openjdk # For PlantUML
-    graphviz # For PlantUML
-    zotero # Citation manager
-    distrobox # Linux containers manager
-    boxbuddy # Distrobox gui
-    python3
-    burpsuite
-    sqlmap
-    steam
-  ];
 
   programs.steam.enable = true;
 
