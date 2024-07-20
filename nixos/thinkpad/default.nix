@@ -31,7 +31,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/zsh.nix
     ../common/optional/flatpak.nix
-    
+
 
     # ../common/optional/hyprland.nix
   ];
@@ -71,7 +71,7 @@
     })
     config.nix.registry;
 
-  
+
   # Add the rest of your current configuration
 
   # Set your hostname

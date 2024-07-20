@@ -6,5 +6,4 @@ let
 in
 rec {
   # example = pkgs.callPackage ./example { };
-  surrealist2 = pkgs.callPackage ./surrealist2 { };
 }

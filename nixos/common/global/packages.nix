@@ -1,4 +1,4 @@
-{pkgs, ...} : {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     appimage-run
     vim
@@ -12,20 +12,20 @@
     nodejs_20
     docker
     docker-compose
-    rustup
     gcc # C compiler, needed for rust-analyzer
-    mise # dev env setup tool
+    #mise # dev env setup tool
     go # Go programming language
     nerdfonts # Nerd fonts
     libreoffice
     android-studio
     figma-linux # Unofficial Figma client
-    bc # winapps requirement
-    freerdp3 # winapps requirement
+    #bc # winapps requirement
+    #freerdp3 # winapps requirement
     google-chrome
-    jetbrains.rust-rover
     usbimager
     bun
+    distrobox # Linux containers manager
+    boxbuddy # Distrobox gui 
   ];
 
   # Enable AppImages
