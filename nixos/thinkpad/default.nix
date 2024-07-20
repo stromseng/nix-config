@@ -114,7 +114,6 @@
       extraGroups = [
         "networkmanager"
         "wheel"
-        "docker"
         "kvm"
 
       ];
@@ -124,8 +123,6 @@
       ];
     };
   };
-
-  users.extraGroups.docker.members = [ "magnus" ];
 
   programs.steam.enable = true;
 

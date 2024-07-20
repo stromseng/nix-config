@@ -9,6 +9,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./locale.nix
     ./packages.nix
+    ./podman.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = {
@@ -42,5 +43,4 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
-  virtualisation.docker.enable = true;
 }
