@@ -39,6 +39,9 @@
         znap source zsh-users/zsh-history-substring-search
         znap source MichaelAquilina/zsh-you-should-use
 
+        # Rust cargo
+        znap source "$HOME/.cargo/env"
+
         # Load starship prompt
         eval "$(starship init zsh)"
       '';
