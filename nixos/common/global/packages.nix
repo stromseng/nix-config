@@ -26,6 +26,7 @@
     bun
     distrobox # Linux containers manager
     boxbuddy # Distrobox gui 
+    ptyxis # A GNOME terminal designed for use with containers
     inputs.fh.packages.x86_64-linux.default
   ];
 

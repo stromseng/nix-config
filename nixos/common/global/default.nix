@@ -10,6 +10,7 @@
     ./locale.nix
     ./packages.nix
     ./docker.nix
+    ./tailscale.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = {

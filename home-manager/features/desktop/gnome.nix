@@ -57,7 +57,7 @@
       enabled-extensions = [
         "trayIconsReloaded@selfmade.pl"
         "Vitals@CoreCoding.com"
-        # "dash-to-panel@jderose9.github.com"
+        #"dash-to-panel@jderose9.github.com"
         "space-bar@luchrioh"
         "dash-to-dock@micxgx.gmail.com"
         "gSnap@micahosborne"
@@ -84,12 +84,16 @@
   };
 
   home.packages = with pkgs; [
-    gnomeExtensions.tray-icons-reloaded
+    #gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.space-bar
     papirus-icon-theme
     gnomeExtensions.gsnap
     gnomeExtensions.noannoyance-fork
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.appindicator
+    gnomeExtensions.logo-menu
+    gnomeExtensions.tailscale-qs
   ];
 }
