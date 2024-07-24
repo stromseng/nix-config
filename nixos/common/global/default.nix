@@ -9,7 +9,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./locale.nix
     ./packages.nix
-    ./podman.nix
+    ./docker.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = {
