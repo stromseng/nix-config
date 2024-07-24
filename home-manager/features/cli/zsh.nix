@@ -29,15 +29,17 @@
             git clone --depth 1 -- \
                 https://github.com/marlonrichert/zsh-snap.git ~/repos/znap
         source ~/repos/znap/znap.zsh  # Start Znap
+
+        
       '';
       initExtra = ''
         # `znap source` starts plugins.
-        znap source marlonrichert/zsh-autocomplete
         znap source zsh-users/zsh-autosuggestions
-        znap source zsh-users/zsh-syntax-highlighting
+        znap source marlonrichert/zsh-autocomplete
         znap source zsh-users/zsh-completions
         znap source zsh-users/zsh-history-substring-search
         znap source MichaelAquilina/zsh-you-should-use
+        znap source zsh-users/zsh-syntax-highlighting
 
         # Rust cargo
         znap source "$HOME/.cargo/env"
@@ -58,4 +60,5 @@
       enable = true;
     };
   };
+
 }

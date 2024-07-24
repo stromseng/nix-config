@@ -5,7 +5,7 @@
 add_newline = true
 
 [os]
-disabled = true
+disabled = false
 
 [git_status]
 diverged = "󰃻"
