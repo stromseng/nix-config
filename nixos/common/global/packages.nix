@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [
     appimage-run
     vim
@@ -26,6 +26,7 @@
     bun
     distrobox # Linux containers manager
     boxbuddy # Distrobox gui 
+    inputs.fh.packages.x86_64-linux.default
   ];
 
   # Enable AppImages

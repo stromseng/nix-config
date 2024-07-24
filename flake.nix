@@ -19,12 +19,17 @@
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
 
+    # Flakehub
+    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
+
+
   };
 
   outputs =
     { self
     , nixpkgs
     , home-manager
+    , fh
     , ...
     }@inputs:
     let
