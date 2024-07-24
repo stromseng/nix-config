@@ -47,35 +47,45 @@
       favorite-apps = [
         "firefox.desktop"
         "code.desktop"
-        "org.gnome.Console.desktop"
+        "org.gnome.Ptyxis.desktop"
+        #"org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
+        "io.github.dvlv.boxbuddyrs.desktop"
       ];
 
       disable-user-extensions = false;
 
       # `gnome-extensions list` for a list
       enabled-extensions = [
-        "trayIconsReloaded@selfmade.pl"
-        "Vitals@CoreCoding.com"
         #"dash-to-panel@jderose9.github.com"
+        #"trayIconsReloaded@selfmade.pl"
+        "Vitals@CoreCoding.com"
         "space-bar@luchrioh"
         "dash-to-dock@micxgx.gmail.com"
         "gSnap@micahosborne"
         "noannoyance-fork@vrba.dev"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "blur-my-shell@aunetx"
+        "logomenu@aryan_k"
+        "tailscale@joaophi.github.com"
       ];
-
-      "extensions/dash-to-panel/panel-element-positions" = ''
-        {"0":[{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
-      '';
-      "extensions/gsnap/use-modifier" = true;
-
-
-
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       click-action = "focus-or-previews";
       intellihide-mode = "ALL_WINDOWS";
       show-trash = false;
+    };
+    "org/gnome/shell/extensions" = {
+      "dash-to-panel/panel-element-positions" = ''
+        {"0":[{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
+      '';
+
+      "gsnap/use-modifier" = true;
+
+      "Logo-menu/menu-button-icon-image" = 18;
+      "Logo-menu/symbolic-icon" = false;
+      "Logo-menu/use-custom-icon" = false;
+      "Logo-menu/menu-button-terminal" = "ptyxis";
     };
   };
 
