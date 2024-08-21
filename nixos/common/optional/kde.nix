@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -13,6 +12,5 @@
   #   style = "adwaita-dark";
   # };
 
-  environment.systemPackages = with pkgs;
-    [ ];
+  environment.systemPackages = with pkgs; [];
 }

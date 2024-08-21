@@ -1,4 +1,4 @@
-{ self, ... }: {
+{self, ...}: {
   # # handle prompt in zsh.nix instead, to use znap
   programs.starship = {
     enable = true;

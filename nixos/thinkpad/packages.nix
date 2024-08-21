@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     #openjdk # For PlantUML
     #graphviz # For PlantUML

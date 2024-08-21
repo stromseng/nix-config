@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -11,8 +11,6 @@
     kdePackages.polkit-kde-agent-1 # Polkit agent, used for authentication dialogs
     kdePackages.qtwayland # qt6 wayland
     libsForQt5.qt5.qtwayland
-
-
   ];
 
   xdg.portal.enable = true;

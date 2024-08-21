@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs = {
     zsh = {
       enable = true;
@@ -15,5 +15,5 @@
   ];
 
   # For autocompletion of system packages
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = ["/share/zsh"];
 }

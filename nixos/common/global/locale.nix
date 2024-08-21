@@ -1,8 +1,7 @@
-{ ... }: {
+{...}: {
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
   i18n = {
-
     # Select internationalisation properties.
     defaultLocale = "en_US.UTF-8";
 

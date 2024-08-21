@@ -1,11 +1,11 @@
-{ ... }: {
+{...}: {
   programs = {
     zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      syntaxHighlighting.highlighters = [ "main" "brackets" ];
+      syntaxHighlighting.highlighters = ["main" "brackets"];
       autocd = true;
       defaultKeymap = "emacs";
       shellAliases = {
@@ -20,8 +20,6 @@
 
         cat = "bat";
         ls = "eza";
-
-
       };
       initExtraBeforeCompInit = ''
         # Download Znap, if it's not there yet.
@@ -30,7 +28,7 @@
                 https://github.com/marlonrichert/zsh-snap.git ~/repos/znap
         source ~/repos/znap/znap.zsh  # Start Znap
 
-        
+
       '';
       initExtra = ''
         # `znap source` starts plugins.
@@ -60,5 +58,4 @@
       enable = true;
     };
   };
-
 }

@@ -1,17 +1,19 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ inputs
-, outputs
-, pkgs
-, ...
-}:
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    ./locale.nix
-    ./packages.nix
-    ./docker.nix
-    ./tailscale.nix
-  ] ++ (builtins.attrValues outputs.nixosModules);
+  inputs,
+  outputs,
+  pkgs,
+  ...
+}: {
+  imports =
+    [
+      inputs.home-manager.nixosModules.home-manager
+      ./locale.nix
+      ./packages.nix
+      ./docker.nix
+      ./tailscale.nix
+    ]
+    ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = {
     inherit inputs outputs;

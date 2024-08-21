@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     appimage-run
     vim
@@ -25,7 +29,7 @@
     usbimager
     bun
     distrobox # Linux containers manager
-    boxbuddy # Distrobox gui 
+    boxbuddy # Distrobox gui
     ptyxis # A GNOME terminal designed for use with containers
     inputs.fh.packages.x86_64-linux.default
   ];
@@ -40,4 +44,6 @@
   };
 
   programs.steam.enable = true;
+
+  programs.firefox.package = pkgs.latest.firefox-nightly-bin;
 }

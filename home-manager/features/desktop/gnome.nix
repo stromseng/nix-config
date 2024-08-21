@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Do `dconf watch /` to see which keys to set when changing settings
 
   # Dconf key format
@@ -22,19 +21,19 @@
       edge-tiling = true;
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-windows = [ "<Alt>Tab" ];
-      switch-windows-backward = [ "<Shift><Alt>Tab" ];
+      switch-windows = ["<Alt>Tab"];
+      switch-windows-backward = ["<Shift><Alt>Tab"];
     };
     "org/gnome/desktop/wm/keybindings" = {
-      switch-applications = [ "<Super>Tab" ];
-      switch-applications-backward = [ "<Shift><Super>Tab" ];
+      switch-applications = ["<Super>Tab"];
+      switch-applications-backward = ["<Shift><Super>Tab"];
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-right = [ "<Alt><Super>Right" ];
-      switch-to-workspace-left = [ "<Alt><Super>Left" ];
-      move-to-workspace-left = [ "<Control><Super>Left" ];
-      move-to-workspace-right = [ "<Control><Super>Right" ];
+      switch-to-workspace-right = ["<Alt><Super>Right"];
+      switch-to-workspace-left = ["<Alt><Super>Left"];
+      move-to-workspace-left = ["<Control><Super>Left"];
+      move-to-workspace-right = ["<Control><Super>Right"];
     };
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;

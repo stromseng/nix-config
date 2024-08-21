@@ -1,11 +1,13 @@
-{ pkgs, lib, config, ... }:
-
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
   '';
-in
-{
+in {
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -14,7 +16,6 @@ in
         ''${startupScript}/bin/start''
         ''${pkgs.polkit-kde-agent-1}/bin/polkit-agent-helper-1''
       ];
-
 
       # This is an example Hyprland config file.
       #
@@ -27,7 +28,6 @@ in
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor = ",preferred,auto,auto";
-
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -134,11 +134,10 @@ in
 
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-      device =
-        {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
-        };
+      device = {
+        name = "epic-mouse-v1";
+        sensitivity = -0.5;
+      };
 
       # Example windowrule v1
       # windowrule = float, ^(kitty)$
@@ -146,7 +145,6 @@ in
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       windowrulev2 = "suppressevent maximize, class:.* "; # You'll probably like this.
-
 
       "$mainMod" = "SUPER";
 
@@ -157,9 +155,7 @@ in
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-
         # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-
 
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
@@ -213,8 +209,5 @@ in
         "$mainMod, mouse:273, resizewindow"
       ];
     };
-
-
-
   };
 }

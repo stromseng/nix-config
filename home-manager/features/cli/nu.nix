@@ -1,8 +1,8 @@
-{ ... }: {
+{...}: {
   programs = {
     nushell = {
       enable = true;
-      # for editing directly to config.nu 
+      # for editing directly to config.nu
       extraConfig = ''
       '';
     };

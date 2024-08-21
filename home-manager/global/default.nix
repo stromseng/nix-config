@@ -1,4 +1,11 @@
-{ inputs, lib, pkgs, config, outputs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -46,9 +53,9 @@
     # Add stuff for your user as you see fit:
     # programs.neovim.enable = true;
     # home.packages = with pkgs; [ steam ];
-    packages = [ ];
+    packages = [];
 
-    activation.createRepoDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    activation.createRepoDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
       mkdir -p ~/repos/
     '';
   };
@@ -66,5 +73,4 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
 }

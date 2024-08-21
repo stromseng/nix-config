@@ -1,11 +1,10 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Workaround for no internet on switch
   systemd.services."flatpak-managed-install" = {
     serviceConfig = {
       ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
     };
   };
-
 
   services = {
     flatpak = {
