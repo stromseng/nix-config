@@ -46,8 +46,8 @@
       favorite-apps = [
         "firefox.desktop"
         "code.desktop"
-        "org.gnome.Ptyxis.desktop"
-        #"org.gnome.Console.desktop"
+        #"org.gnome.Ptyxis.desktop"
+        "org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
         "io.github.dvlv.boxbuddyrs.desktop"
       ];
