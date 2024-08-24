@@ -38,6 +38,7 @@ the other awesome learning resources).
 ## The repo
 
 - [Install git](https://nixos.wiki/wiki/git), if you haven't already.
+  - Run a temporary shell with `nix-shell -p git`
 - Create a repository for your config, for example:
 
 ```bash
