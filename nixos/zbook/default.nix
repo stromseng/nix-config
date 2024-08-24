@@ -15,7 +15,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
-    #./packages.nix
+    ./packages.nix
 
     #Import common global and optional configs
     ../common/global
