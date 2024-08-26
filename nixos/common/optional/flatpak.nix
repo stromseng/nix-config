@@ -33,6 +33,7 @@
         "com.getpostman.Postman"
         "com.stremio.Stremio"
         "com.github.finefindus.eyedropper"
+        "io.github.zen_browser.zen"
       ];
     };
   };
